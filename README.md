@@ -3,3 +3,6 @@ A barely working example of a Kubernetes controller, which watches the Kubernete
 
 NOTE: This is not the correct way to create a Kubernetes controller, as it simply performs a watch request in a loop. This will never work properly, because some watch events will be lost. 
 
+Extra:
+The pkg/v1 module must reside in the $GOPATH/src/ directory.
+

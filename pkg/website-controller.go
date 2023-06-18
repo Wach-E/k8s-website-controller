@@ -1,13 +1,13 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
 	"encoding/json"
+	"fmt"
 	"io"
-	"log"
-	"github.com/luksa/website-controller/pkg/v1"
 	"io/ioutil"
+	"log"
+	"net/http"
+	v1 "pkg/v1"
 	"strings"
 )
 
@@ -47,8 +47,8 @@ func createWebsite(website v1.Website) {
 }
 
 func deleteWebsite(website v1.Website) {
-	deleteResource(website, "api/v1", "services", getName(website));
-	deleteResource(website, "apis/apps/v1", "deployments", getName(website));
+	deleteResource(website, "api/v1", "services", getName(website))
+	deleteResource(website, "apis/apps/v1", "deployments", getName(website))
 }
 
 func createResource(webserver v1.Website, apiGroup string, kind string, filename string) {
@@ -84,5 +84,5 @@ func deleteResource(webserver v1.Website, apiGroup string, kind string, name str
 }
 
 func getName(website v1.Website) string {
-	return website.Metadata.Name + "-website";
+	return website.Metadata.Name + "-website"
 }
